@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:appdba="http://www.datical.net/xml/ns/appdba"
+                   xmlns:datical="http://www.datical.net/xml/ns/datical"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="i035299 (generated)" id="2">
+        <createTable tableName="roles">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="role_pkey"/>
+            </column>
+            <column name="tenant_id" type="BIGINT"/>
+            <column name="rolenumber" type="NVARCHAR(255)"/>
+            <column name="rolename" type="NVARCHAR(255)"/>
+            <column name="version" type="BIGINT"/>
+            <column name="creationuserid" type="BIGINT"/>
+            <column name="creatorcode" type="BIGINT"/>
+            <column name="internalcreationtime" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="internalupdatetime" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usersign2" type="BIGINT"/>
+            <column name="updatorcode" type="BIGINT"/>
+            <column name="instance" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

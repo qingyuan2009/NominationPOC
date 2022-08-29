@@ -1,0 +1,7 @@
+PG_HOST = localhost
+PG_PORT = 5433
+PG_SCHEMA = public
+PG_DATABASE = postgres
+PG_USER = postgres
+PG_PASSWD = Initial0
+

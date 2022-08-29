@@ -1,0 +1,19 @@
+dependencies {
+    api project(':nomination-core')
+    api 'com.sap.s4hana.eureka.framework:app-frw-rest-starter'
+    api 'com.sap.s4hana.eureka.framework:app-frw-rest-swagger-starter'
+    testRuntimeOnly 'com.sap.s4hana.eureka.framework:app-frw-open-api-doc-starter'
+}
+
+test{
+    environment = [
+            // optional, output swagger file directory, default current directory
+            'swagger.jsongen.dir': "../${project.buildDir.name}",
+
+            //optional, scan packages, comma split, default com.sap.s4hana.eureka.business
+            'swagger.jsongen.package': 'com.sap.nomination',
+
+            //optional, swagger file name, default project dir name
+            'swagger.jsongen.file': "swagger"
+    ]
+}

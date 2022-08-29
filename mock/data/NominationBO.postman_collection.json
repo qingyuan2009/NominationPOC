@@ -1,0 +1,800 @@
+{
+	"info": {
+		"_postman_id": "900feaf4-e36d-4baa-97bd-4860acc97c9b",
+		"name": "NominationBO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create single entity",
+			"item": [
+				{
+					"name": "Create single role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"roleNumber\": \"role1\",\r\n    \"roleName\": \"normal_user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create single team",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"roleNumber\": \"role01\",\r\n    \"roleName\": \"normal_user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/team",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create single user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"userNumber\": \"user_1\",\r\n    \"firstName\": \"Rui\",\r\n    \"lastName\": \"Zhou\",\r\n    \"loginName\": \"I035299\",\r\n    \"password\": \"1234567\",\r\n    \"role\": { \r\n        \"roleNumber\": \"role_1\",\r\n        \"roleName\": \"normal_user\"\r\n    },\r\n    \"team\":{ \r\n        \"teamNumber\": \"team_1\",\r\n        \"teamName\": \"team1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create single period",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"periodNumber\": \"2022Q4\",\r\n    \"periodName\": \"2022Q4\",\r\n    \"norminationStart\": \"2022-10-01T00:00:00.000+00:00\",\r\n    \"norminationEnd\": \"2022-10-31T00:00:00.000+00:00\",\r\n    \"voteStart\": \"2022-11-01T00:00:00.000+00:00\",\r\n    \"voteEnd\": \"2022-12-31T00:00:00.000+00:00\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/period",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"period"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create single prize",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{     \r\n    \"prizeNumber\": \"Prize1\",        \r\n    \"prizeName\": \"Prize1\",\r\n    \"prizeDescription\": \"This is prize 1\",\r\n    \"period\":{\r\n        \"id\": 1201,\r\n        \"periodNumber\": \"2022Q4\",\r\n        \"periodName\": \"2022Q4\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/prize",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create single nomination",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"nominationNumber\": \"nomination_1\",\r\n    \"comment\": \"This is comments\",\r\n    \"nominee\":{\r\n        \"userNumber\": \"user_1\"\r\n    },\r\n    \"prize\":{\r\n        \"prizeNumber\": \"Prize_1\"\r\n    },\r\n    \"period\":{\r\n        \"periodNumber\": \"2022Q4\"\r\n    },\r\n    \"nominator\":{\r\n        \"userNumber\": \"user_1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nomination",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nomination"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create single vote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"voteNumber\": \"vote_1\",   \r\n    \"nominee\":{\r\n        \"userNumber\": \"user_1\"\r\n    },\r\n    \"prize\":{\r\n        \"prizeNumber\": \"Prize_1\"\r\n    },\r\n    \"period\":{\r\n        \"periodNumber\": \"2022Q4\"\r\n    },\r\n    \"voter\":{\r\n        \"userNumber\": \"user_1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/vote",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vote"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "read data",
+			"item": [
+				{
+					"name": "Get roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Teams",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Tenant ID",
+								"key": "X-Tenant-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) User ID",
+								"key": "X-User-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) Tenant Schema",
+								"key": "X-Tenant-Schema",
+								"value": "sint ut"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/team?pageSize=10&pageNo=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNo",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Tenant ID",
+								"key": "X-Tenant-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) User ID",
+								"key": "X-User-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) Tenant Schema",
+								"key": "X-Tenant-Schema",
+								"value": "sint ut"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Periods",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Tenant ID",
+								"key": "X-Tenant-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) User ID",
+								"key": "X-User-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) Tenant Schema",
+								"key": "X-Tenant-Schema",
+								"value": "sint ut"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/period?pageSize=10&pageNo=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"period"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNo",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Prizes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Tenant ID",
+								"key": "X-Tenant-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) User ID",
+								"key": "X-User-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) Tenant Schema",
+								"key": "X-Tenant-Schema",
+								"value": "sint ut"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/prize?pageSize=10&pageNo=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prize"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNo",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get nominations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Tenant ID",
+								"key": "X-Tenant-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) User ID",
+								"key": "X-User-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) Tenant Schema",
+								"key": "X-Tenant-Schema",
+								"value": "sint ut"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/nomination?pageSize=10&pageNo=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nomination"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNo",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get votes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Tenant ID",
+								"key": "X-Tenant-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) User ID",
+								"key": "X-User-ID",
+								"value": "1"
+							},
+							{
+								"description": "(Required) Tenant Schema",
+								"key": "X-Tenant-Schema",
+								"value": "sint ut"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/vote?pageSize=10&pageNo=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vote"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNo",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"item": [
+				{
+					"name": "update single role",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"roleNumber\": \"role_1\",\r\n    \"roleName\": \"advanced_user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/role/role_1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"role",
+								"role_1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Tenant-ID",
+						"value": "1",
+						"type": "default"
+					},
+					{
+						"key": "X-User-ID",
+						"value": "1",
+						"type": "default"
+					},
+					{
+						"key": "X-Tenant-Schema",
+						"value": "sint ut",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"users\": [\r\n      {\r\n         \"userNumber\": \"user_1\",\r\n         \"firstName\": \"Rui\",\r\n         \"lastName\": \"zhou\",\r\n         \"loginName\": \"user1\",\r\n         \"password\": \"1234567\",\r\n         \"role\": {\r\n            \"roleNumber\": \"role_1\",\r\n            \"roleName\": \"normal_user\"\r\n         },\r\n         \"team\": {\r\n            \"teamNumber\": \"team_1\",\r\n            \"teamName\": \"team1\"\r\n         }\r\n      },\r\n      {\r\n         \"userNumber\": \"user_2\",\r\n         \"firstName\": \"Alex\",\r\n         \"lastName\": \"Sun\",\r\n         \"loginName\": \"user2\",\r\n         \"password\": \"1234567\",\r\n         \"role\": {\r\n            \"roleNumber\": \"role_1\",\r\n            \"roleName\": \"normal_user\"\r\n         },\r\n         \"team\": {\r\n            \"teamNumber\": \"team_2\",\r\n            \"teamName\": \"team2\"\r\n         }\r\n      }\r\n   ],\r\n   \"prizes\": [\r\n      {\r\n         \"prizeNumber\": \"Prize_1\",\r\n         \"prizeName\": \"Prize1\",\r\n         \"prizeDescription\": \"This is prize 1\",\r\n         \"period\": {\r\n            \"periodNumber\": \"2022Q4\",\r\n            \"periodName\": \"2022Q4\"\r\n         }\r\n      },\r\n      {\r\n         \"prizeNumber\": \"Prize_2\",\r\n         \"prizeName\": \"Prize2\",\r\n         \"prizeDescription\": \"This is prize 2\",\r\n         \"period\": {\r\n            \"periodNumber\": \"2022Q4\",\r\n            \"periodName\": \"2022Q4\"\r\n         }\r\n      }\r\n   ],\r\n   \"nominations\": [\r\n      {\r\n         \"nominationNumber\": \"nomination_1\",\r\n         \"nomineeId\": \"00000000-0000-0000-0000-000000000101\",\r\n         \"periodId\": \"00000000-0000-0000-0000-000000001001\",\r\n         \"prizeId\": \"00000000-0000-0000-0000-000000010001\",\r\n         \"nominatorId\": \"00000000-0000-0000-0000-000000000101\",\r\n         \"comment\": \"Rui nominate Rui for Prize1 and comment here\"\r\n      },\r\n      {\r\n         \"id\": \"00000000-0000-0000-0000-000000200002\",\r\n         \"nomineeId\": \"00000000-0000-0000-0000-000000000102\",\r\n         \"periodId\": \"00000000-0000-0000-0000-000000001001\",\r\n         \"prizeId\": \"00000000-0000-0000-0000-000000010001\",\r\n         \"nominatorId\": \"00000000-0000-0000-0000-000000000102\",\r\n         \"comment\": \"Alex nominate Alex for Prize1 and comment here\"\r\n      }\r\n   ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

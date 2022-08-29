@@ -1,0 +1,53 @@
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'jacoco'
+
+    repositories {
+        // Annotation: please always set our private nexus as the first repo when run CI pipeline.
+        maven {
+            url 'https://nexus.eurekacloud.io/repository/maven-public/'
+            credentials {
+                username = System.getenv('NEXUS_USER') ?: ''
+                password = System.getenv('NEXUS_PASSWORD') ?: ''
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    /** General **/
+    dependencies{
+        implementation platform("com.sap.s4hana.eureka.framework:app-frw-ng-dependencies:${property('app-frw-version')}")
+        annotationProcessor platform("com.sap.s4hana.eureka.framework:app-frw-bom:${property('app-frw-version')}")
+        testAnnotationProcessor platform("com.sap.s4hana.eureka.framework:app-frw-bom:${property('app-frw-version')}")
+
+        compileOnly  'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testCompileOnly 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
+
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+        testImplementation 'org.mockito:mockito-core'
+        testImplementation 'org.mockito:mockito-junit-jupiter'
+    }
+
+    test {
+        useJUnitPlatform()
+        finalizedBy jacocoTestReport // report is always generated after tests run
+    }
+
+    jacocoTestCoverageVerification {
+        violationRules {
+            rule {
+                limit {
+                    minimum = 0.8
+                }
+            }
+        }
+    }
+}
+

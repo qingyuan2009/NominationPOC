@@ -1,0 +1,129 @@
+{
+  "users": [
+    {
+      "userNumber": "user_1",
+      "firstName": "Rui",
+      "lastName": "Zhou",
+      "loginName": "user1",
+      "password": "1234567",
+      "role": {
+        "roleNumber": "role1",
+        "roleName": "normal_user"
+      },
+      "team": {
+        "teamNumber": "team_1",
+        "teamName": "team1"
+      }
+    },
+    {
+      "userNumber": "user_2",
+      "firstName": "Alex",
+      "lastName": "Sun",
+      "loginName": "user2",
+      "password": "1234567",
+      "role": {
+        "roleNumber": "role1",
+        "roleName": "normal_user"
+      },
+      "team": {
+        "teamNumber": "team_2",
+        "teamName": "team2"
+      }
+    }
+  ],
+  "prizes": [
+    {
+      "prizeNumber": "Prize_1",
+      "prizeName": "Prize1",
+      "prizeDescription": "This is prize 1",
+      "period": {
+        "periodNumber": "2022Q4",
+        "periodName": "2022Q4",
+        "norminationStart": "2022-10-01T00:00:00.000+00:00",
+        "norminationEnd": "2022-10-31T00:00:00.000+00:00",
+        "voteStart": "2022-11-01T00:00:00.000+00:00",
+        "voteEnd": "2022-12-31T00:00:00.000+00:00"
+      }
+    },
+    {
+      "prizeNumber": "Prize_2",
+      "prizeName": "Prize2",
+      "prizeDescription": "This is prize 2",
+      "period": {
+        "periodNumber": "2022Q4",
+        "periodName": "2022Q4",
+        "norminationStart": "2022-10-01T00:00:00.000+00:00",
+        "norminationEnd": "2022-10-31T00:00:00.000+00:00",
+        "voteStart": "2022-11-01T00:00:00.000+00:00",
+        "voteEnd": "2022-12-31T00:00:00.000+00:00"
+      }
+    }
+  ],
+  "nominations": [
+    {
+      "nominationNumber": "nomination_1",
+      "nominee": {
+        "userNumber": "user_1"
+      },
+      "prize": {
+        "prizeNumber": "Prize_1"
+      },
+      "period": {
+        "periodNumber": "2022Q4"
+      },
+      "nominator": {
+        "userNumber": "user_1"
+      },
+      "comment": "This is comments 1"
+    },
+    {
+      "nominationNumber": "nomination_2",
+      "nominee": {
+        "userNumber": "user_2"
+      },
+      "prize": {
+        "prizeNumber": "Prize_1"
+      },
+      "period": {
+        "periodNumber": "2022Q4"
+      },
+      "nominator": {
+        "userNumber": "user_2"
+      },
+      "comment": "This is comments 2"
+    }
+  ],
+  "votes": [
+    {
+      "voteNumber": "vote_1",
+      "nominee": {
+        "userNumber": "user_1"
+      },
+      "prize": {
+        "prizeNumber": "Prize_1"
+      },
+      "period": {
+        "periodNumber": "2022Q4"
+      },
+      "voter": {
+        "userNumber": "user_1"
+      }
+    },
+    {
+      "voteNumber": "vote_2",
+      "nominee": {
+        "userNumber": "user_2"
+      },
+      "prize": {
+        "prizeNumber": "Prize_2"
+      },
+      "period": {
+        "periodNumber": "2022Q4"
+      },
+      "voter": {
+        "userNumber": "user_2"
+      }
+    }
+  ]
+
+}

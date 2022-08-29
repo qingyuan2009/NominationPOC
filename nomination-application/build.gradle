@@ -1,0 +1,51 @@
+plugins {
+	id 'org.springframework.boot' version "2.2.6.RELEASE"
+	id 'application'
+}
+apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
+
+dependencies {
+	implementation project(':nomination-api')
+	implementation project(':nomination-tenantlcm')
+	implementation project(':nomination-core')
+
+	api 'com.sap.s4hana.eureka.framework:app-frw-rest-starter'
+	api 'com.sap.s4hana.eureka.framework:app-frw-rest-swagger-starter'
+	implementation 'com.sap.s4hana.eureka.framework:app-frw-event-kafka-starter'
+	implementation 'com.sap.s4hana.eureka.framework:app-frw-autoconfigure-starter'
+	implementation 'com.sap.s4hana.eureka.framework:app-frw-context-starter'
+	implementation 'com.sap.s4hana.eureka.framework:app-frw-observation-starter'
+	implementation 'com.sap.s4hana.eureka.framework:app-frw-rest-sentinel-starter'
+	runtimeOnly "net.minidev:json-smart"
+	runtimeOnly "org.postgresql:postgresql:${property('postgresql-version')}"
+	testRuntimeOnly 'com.sap.s4hana.eureka.framework:app-frw-open-api-doc-starter'
+}
+
+bootRun{
+	workingDir("..")
+	environment = [
+			jwt_enable: "false",
+			jwt_permission_validation: "false",
+			spec_sidecar_enable: "false"
+	]
+}
+
+tasks.register("bootRunLocal") {
+	doFirst {
+		tasks.bootRun.configure {
+			systemProperty('java.io.tmpdir', System.getenv("TMP"))
+		}
+	}
+	finalizedBy("bootRun")
+}
+
+application {
+	mainClassName = 'com.sap.s4hana.eureka.business.nomination.application.Application'
+}
+
+group 'com.sap.nomination'
+
+archivesBaseName='nomination-service'
+
+
