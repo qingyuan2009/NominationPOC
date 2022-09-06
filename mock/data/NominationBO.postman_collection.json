@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "900feaf4-e36d-4baa-97bd-4860acc97c9b",
+		"_postman_id": "358716b9-2fb8-420d-be40-2013848755a4",
 		"name": "NominationBO",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -36,7 +36,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"roleNumber\": \"role1\",\r\n    \"roleName\": \"normal_user\"\r\n}",
+							"raw": "{ \r\n    \"roleNumber\": \"role_1\",\r\n    \"roleName\": \"normal_user\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -44,12 +44,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/role",
-							"protocol": "http",
+							"raw": "{{BASEURL}}/api/role",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"role"
@@ -86,7 +84,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"roleNumber\": \"role01\",\r\n    \"roleName\": \"normal_user\"\r\n}",
+							"raw": "{ \r\n    \"teamNumber\": \"team_1\",\r\n    \"teamName\": \"team1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,12 +92,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/team",
-							"protocol": "http",
+							"raw": "{{BASEURL}}/api/team",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"team"
@@ -136,7 +132,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{    \r\n    \"userNumber\": \"user_1\",\r\n    \"firstName\": \"Rui\",\r\n    \"lastName\": \"Zhou\",\r\n    \"loginName\": \"I035299\",\r\n    \"password\": \"1234567\",\r\n    \"role\": { \r\n        \"roleNumber\": \"role_1\",\r\n        \"roleName\": \"normal_user\"\r\n    },\r\n    \"team\":{ \r\n        \"teamNumber\": \"team_1\",\r\n        \"teamName\": \"team1\"\r\n    }\r\n}",
+							"raw": "{    \r\n    \"userNumber\": \"user_2\",\r\n    \"firstName\": \"Alex\",\r\n    \"lastName\": \"Sun\",\r\n    \"loginName\": \"alex\",\r\n    \"password\": \"1234567\",\r\n    \"role\": { \r\n        \"roleNumber\": \"role_2\",\r\n        \"roleName\": \"advanced_user\"        \r\n    },\r\n    \"team\":{ \r\n        \"teamNumber\": \"team_1\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -144,12 +140,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/user",
-							"protocol": "http",
+							"raw": "{{BASEURL}}/api/user",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"user"
@@ -194,12 +188,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/period",
-							"protocol": "http",
+							"raw": "{{BASEURL}}/api/period",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"period"
@@ -236,7 +228,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{     \r\n    \"prizeNumber\": \"Prize1\",        \r\n    \"prizeName\": \"Prize1\",\r\n    \"prizeDescription\": \"This is prize 1\",\r\n    \"period\":{\r\n        \"id\": 1201,\r\n        \"periodNumber\": \"2022Q4\",\r\n        \"periodName\": \"2022Q4\"\r\n    }\r\n}",
+							"raw": "{     \r\n    \"prizeNumber\": \"prize_1\",        \r\n    \"prizeName\": \"Prize1\",\r\n    \"prizeDescription\": \"This is prize 1\",\r\n    \"period\":{        \r\n        \"periodNumber\": \"2022Q4\"       \r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -244,12 +236,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/prize",
-							"protocol": "http",
+							"raw": "{{BASEURL}}/api/prize",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"prize"
@@ -286,7 +276,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"nominationNumber\": \"nomination_1\",\r\n    \"comment\": \"This is comments\",\r\n    \"nominee\":{\r\n        \"userNumber\": \"user_1\"\r\n    },\r\n    \"prize\":{\r\n        \"prizeNumber\": \"Prize_1\"\r\n    },\r\n    \"period\":{\r\n        \"periodNumber\": \"2022Q4\"\r\n    },\r\n    \"nominator\":{\r\n        \"userNumber\": \"user_1\"\r\n    }\r\n}",
+							"raw": "{ \r\n    \"nominationNumber\": \"nomination_1\",\r\n    \"comment\": \"This is comments\",\r\n    \"nominee\":{\r\n        \"userNumber\": \"user_1\"\r\n    },\r\n    \"prize\":{\r\n        \"prizeNumber\": \"prize_1\"\r\n    },\r\n    \"period\":{\r\n        \"periodNumber\": \"2022Q4\"\r\n    },\r\n    \"nominator\":{\r\n        \"userNumber\": \"user_1\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -294,12 +284,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/nomination",
-							"protocol": "http",
+							"raw": "{{BASEURL}}/api/nomination",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"nomination"
@@ -336,7 +324,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"voteNumber\": \"vote_1\",   \r\n    \"nominee\":{\r\n        \"userNumber\": \"user_1\"\r\n    },\r\n    \"prize\":{\r\n        \"prizeNumber\": \"Prize_1\"\r\n    },\r\n    \"period\":{\r\n        \"periodNumber\": \"2022Q4\"\r\n    },\r\n    \"voter\":{\r\n        \"userNumber\": \"user_1\"\r\n    }\r\n}",
+							"raw": "{ \r\n    \"voteNumber\": \"vote_1\",   \r\n    \"nominee\":{\r\n        \"userNumber\": \"user_1\"\r\n    },\r\n    \"prize\":{\r\n        \"prizeNumber\": \"prize_1\"\r\n    },\r\n    \"period\":{\r\n        \"periodNumber\": \"2022Q4\"\r\n    },\r\n    \"voter\":{\r\n        \"userNumber\": \"user_1\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -344,12 +332,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/vote",
-							"protocol": "http",
+							"raw": "{{BASEURL}}/api/vote",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"vote"
@@ -390,12 +376,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/role",
-							"protocol": "http",
+							"raw": "{{BASEURL}}/api/role",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"role"
@@ -430,11 +414,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/team?pageSize=10&pageNo=0",
+							"raw": "{{BASEURL}}/api/team?pageSize=10&pageNo=0",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"team"
@@ -479,11 +462,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/user",
+							"raw": "{{BASEURL}}/api/user",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"user"
@@ -518,11 +500,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/period?pageSize=10&pageNo=0",
+							"raw": "{{BASEURL}}/api/period?pageSize=10&pageNo=0",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"period"
@@ -567,11 +548,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/prize?pageSize=10&pageNo=0",
+							"raw": "{{BASEURL}}/api/prize?pageSize=10&pageNo=0",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"prize"
@@ -616,11 +596,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/nomination?pageSize=10&pageNo=0",
+							"raw": "{{BASEURL}}/api/nomination?pageSize=10&pageNo=0",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"nomination"
@@ -665,11 +644,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/vote?pageSize=10&pageNo=0",
+							"raw": "{{BASEURL}}/api/vote?pageSize=10&pageNo=0",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"vote"
@@ -691,7 +669,7 @@
 			]
 		},
 		{
-			"name": "Update",
+			"name": "update",
 			"item": [
 				{
 					"name": "update single role",
@@ -721,7 +699,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"roleNumber\": \"role_1\",\r\n    \"roleName\": \"advanced_user\"\r\n}",
+							"raw": "{ \r\n    \"roleNumber\": \"role_2\",\r\n    \"roleName\": \"normal_user\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -729,16 +707,656 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/role/role_1",
-							"protocol": "http",
+							"raw": "{{BASEURL}}/api/role/role_2",
 							"host": [
-								"localhost"
+								"{{BASEURL}}"
 							],
-							"port": "8080",
+							"path": [
+								"api",
+								"role",
+								"role_2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update single team",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"teamNumber\": \"team_1\",\r\n    \"teamName\": \"team1 extra\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/team/team_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"team",
+								"team_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update single user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {        \r\n        \"userNumber\": \"user_1\",\r\n        \"firstName\": \"Rui\",\r\n        \"lastName\": \"Zhou\",\r\n        \"loginName\": \"I035299\",\r\n        \"password\": \"1234567\",\r\n        \"role\": {\r\n            \"roleNumber\": \"role_2\"\r\n        },\r\n        \"team\": {\r\n            \"teamNumber\": \"team_1\"\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/user/user_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"user_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update single period",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {        \r\n        \"periodNumber\": \"2022Q4\",\r\n        \"periodName\": \"2022Q4-extra\",\r\n        \"norminationStart\": \"2022-10-01T00:00:00.000+00:00\",\r\n        \"norminationEnd\": \"2022-10-31T00:00:00.000+00:00\",\r\n        \"voteStart\": \"2022-11-01T00:00:00.000+00:00\",\r\n        \"voteEnd\": \"2022-12-31T00:00:00.000+00:00\"\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/period/2022Q4",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"period",
+								"2022Q4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update single prize",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{        \r\n        \"prizeNumber\": \"prize_1\",\r\n        \"prizeName\": \"Prize1\",\r\n        \"prizeDescription\": \"This is prize 1 extra\",\r\n        \"period\": {           \r\n            \"periodNumber\": \"2022Q4\"           \r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/prize/prize_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"prize",
+								"prize_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update single nomination",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {       \r\n        \"nominationNumber\": \"nomination_1\",\r\n        \"nominee\": {           \r\n            \"userNumber\": \"user_1\"           \r\n        },\r\n        \"prize\": {            \r\n            \"prizeNumber\": \"prize_1\"           \r\n        },\r\n        \"period\": {            \r\n            \"periodNumber\": \"2022Q4\"            \r\n        },\r\n        \"nominator\": {            \r\n            \"userNumber\": \"user_2\"            \r\n        },\r\n        \"comment\": \"This is comments\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/nomination/nomination_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"nomination",
+								"nomination_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update single vote",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 201,\r\n        \"voteNumber\": \"vote_1\",\r\n        \"nominee\": {            \r\n            \"userNumber\": \"user_2\"           \r\n        },\r\n        \"prize\": {            \r\n            \"prizeNumber\": \"prize_1\"            \r\n        },\r\n        \"period\": {            \r\n            \"periodNumber\": \"2022Q4\"            \r\n        },\r\n        \"voter\": {           \r\n            \"userNumber\": \"user_1\"           \r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/vote/vote_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"vote",
+								"vote_1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delete",
+			"item": [
+				{
+					"name": "delete single role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/role/role_1",
+							"host": [
+								"{{BASEURL}}"
+							],
 							"path": [
 								"api",
 								"role",
 								"role_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete single team",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/team/team_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"team",
+								"team_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete single user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/user/user_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"user_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete single period",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/period/2022Q4",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"period",
+								"2022Q4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete single prize",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/prize/Prize_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"prize",
+								"Prize_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete single nomination",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/nomination/nomination_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"nomination",
+								"nomination_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete single vote",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-User-ID",
+								"value": "1",
+								"type": "default"
+							},
+							{
+								"key": "X-Tenant-Schema",
+								"value": "sint ut",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/vote/vote_1",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"vote",
+								"vote_1"
 							]
 						}
 					},
@@ -774,7 +1392,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n   \"users\": [\r\n      {\r\n         \"userNumber\": \"user_1\",\r\n         \"firstName\": \"Rui\",\r\n         \"lastName\": \"zhou\",\r\n         \"loginName\": \"user1\",\r\n         \"password\": \"1234567\",\r\n         \"role\": {\r\n            \"roleNumber\": \"role_1\",\r\n            \"roleName\": \"normal_user\"\r\n         },\r\n         \"team\": {\r\n            \"teamNumber\": \"team_1\",\r\n            \"teamName\": \"team1\"\r\n         }\r\n      },\r\n      {\r\n         \"userNumber\": \"user_2\",\r\n         \"firstName\": \"Alex\",\r\n         \"lastName\": \"Sun\",\r\n         \"loginName\": \"user2\",\r\n         \"password\": \"1234567\",\r\n         \"role\": {\r\n            \"roleNumber\": \"role_1\",\r\n            \"roleName\": \"normal_user\"\r\n         },\r\n         \"team\": {\r\n            \"teamNumber\": \"team_2\",\r\n            \"teamName\": \"team2\"\r\n         }\r\n      }\r\n   ],\r\n   \"prizes\": [\r\n      {\r\n         \"prizeNumber\": \"Prize_1\",\r\n         \"prizeName\": \"Prize1\",\r\n         \"prizeDescription\": \"This is prize 1\",\r\n         \"period\": {\r\n            \"periodNumber\": \"2022Q4\",\r\n            \"periodName\": \"2022Q4\"\r\n         }\r\n      },\r\n      {\r\n         \"prizeNumber\": \"Prize_2\",\r\n         \"prizeName\": \"Prize2\",\r\n         \"prizeDescription\": \"This is prize 2\",\r\n         \"period\": {\r\n            \"periodNumber\": \"2022Q4\",\r\n            \"periodName\": \"2022Q4\"\r\n         }\r\n      }\r\n   ],\r\n   \"nominations\": [\r\n      {\r\n         \"nominationNumber\": \"nomination_1\",\r\n         \"nomineeId\": \"00000000-0000-0000-0000-000000000101\",\r\n         \"periodId\": \"00000000-0000-0000-0000-000000001001\",\r\n         \"prizeId\": \"00000000-0000-0000-0000-000000010001\",\r\n         \"nominatorId\": \"00000000-0000-0000-0000-000000000101\",\r\n         \"comment\": \"Rui nominate Rui for Prize1 and comment here\"\r\n      },\r\n      {\r\n         \"id\": \"00000000-0000-0000-0000-000000200002\",\r\n         \"nomineeId\": \"00000000-0000-0000-0000-000000000102\",\r\n         \"periodId\": \"00000000-0000-0000-0000-000000001001\",\r\n         \"prizeId\": \"00000000-0000-0000-0000-000000010001\",\r\n         \"nominatorId\": \"00000000-0000-0000-0000-000000000102\",\r\n         \"comment\": \"Alex nominate Alex for Prize1 and comment here\"\r\n      }\r\n   ]\r\n}",
+					"raw": "{\r\n  \"roles\": [\r\n      {\r\n        \"roleNumber\": \"role_1\",\r\n        \"roleName\": \"normal_user\"\r\n      },\r\n      {\r\n        \"roleNumber\": \"role_2\",\r\n        \"roleName\": \"admin_user\"\r\n      }\r\n  ],\r\n  \"teams\": [\r\n      {\r\n        \"teamNumber\": \"team_1\",\r\n        \"teamName\": \"team1\"\r\n      },\r\n      {\r\n        \"teamNumber\": \"team_2\",\r\n        \"teamName\": \"team2\"\r\n      }\r\n  ],\r\n  \"users\": [\r\n    {\r\n      \"userNumber\": \"user_1\",\r\n      \"firstName\": \"Rui\",\r\n      \"lastName\": \"Zhou\",\r\n      \"loginName\": \"user1\",\r\n      \"password\": \"1234567\",\r\n      \"role\": {\r\n        \"roleNumber\": \"role_1\"        \r\n      },\r\n      \"team\": {\r\n        \"teamNumber\": \"team_1\"        \r\n      }\r\n    },\r\n    {\r\n      \"userNumber\": \"user_2\",\r\n      \"firstName\": \"Alex\",\r\n      \"lastName\": \"Sun\",\r\n      \"loginName\": \"user2\",\r\n      \"password\": \"1234567\",\r\n      \"role\": {\r\n        \"roleNumber\": \"role_1\"       \r\n      },\r\n      \"team\": {\r\n        \"teamNumber\": \"team_2\"\r\n      }\r\n    }\r\n  ],\r\n  \"periods\":[\r\n    {\r\n        \"periodNumber\": \"2022Q4\",\r\n        \"periodName\": \"2022Q4\",\r\n        \"norminationStart\": \"2022-10-01T00:00:00.000+00:00\",\r\n        \"norminationEnd\": \"2022-10-31T00:00:00.000+00:00\",\r\n        \"voteStart\": \"2022-11-01T00:00:00.000+00:00\",\r\n        \"voteEnd\": \"2022-12-31T00:00:00.000+00:00\"\r\n    }\r\n  ],\r\n  \"prizes\": [\r\n    {\r\n      \"prizeNumber\": \"prize_1\",\r\n      \"prizeName\": \"Prize1\",\r\n      \"prizeDescription\": \"This is prize 1\",\r\n      \"period\": {\r\n          \"periodNumber\": \"2022Q4\"\r\n      }\r\n    },\r\n    {\r\n      \"prizeNumber\": \"prize_2\",\r\n      \"prizeName\": \"Prize2\",\r\n      \"prizeDescription\": \"This is prize 2\",\r\n      \"period\": {\r\n        \"periodNumber\": \"2022Q4\"       \r\n      }\r\n    }\r\n  ],\r\n  \"nominations\": [\r\n    {\r\n      \"nominationNumber\": \"nomination_1\",\r\n      \"nominee\": {\r\n        \"userNumber\": \"user_1\"\r\n      },\r\n      \"prize\": {\r\n        \"prizeNumber\": \"prize_1\"\r\n      },\r\n      \"period\": {\r\n        \"periodNumber\": \"2022Q4\"\r\n      },\r\n      \"nominator\": {\r\n        \"userNumber\": \"user_1\"\r\n      },\r\n      \"comment\": \"This is comments 1\"\r\n    },\r\n    {\r\n      \"nominationNumber\": \"nomination_2\",\r\n      \"nominee\": {\r\n        \"userNumber\": \"user_2\"\r\n      },\r\n      \"prize\": {\r\n        \"prizeNumber\": \"prize_1\"\r\n      },\r\n      \"period\": {\r\n        \"periodNumber\": \"2022Q4\"\r\n      },\r\n      \"nominator\": {\r\n        \"userNumber\": \"user_2\"\r\n      },\r\n      \"comment\": \"This is comments 2\"\r\n    }\r\n  ],\r\n  \"votes\": [\r\n    {\r\n      \"voteNumber\": \"vote_1\",\r\n      \"nominee\": {\r\n        \"userNumber\": \"user_1\"\r\n      },\r\n      \"prize\": {\r\n        \"prizeNumber\": \"prize_1\"\r\n      },\r\n      \"period\": {\r\n        \"periodNumber\": \"2022Q4\"\r\n      },\r\n      \"voter\": {\r\n        \"userNumber\": \"user_1\"\r\n      }\r\n    },\r\n    {\r\n      \"voteNumber\": \"vote_2\",\r\n      \"nominee\": {\r\n        \"userNumber\": \"user_2\"\r\n      },\r\n      \"prize\": {\r\n        \"prizeNumber\": \"prize_2\"\r\n      },\r\n      \"period\": {\r\n        \"periodNumber\": \"2022Q4\"\r\n      },\r\n      \"voter\": {\r\n        \"userNumber\": \"user_2\"\r\n      }\r\n    }\r\n  ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -782,12 +1400,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/upload",
-					"protocol": "http",
+					"raw": "{{BASEURL}}/api/upload",
 					"host": [
-						"localhost"
+						"{{BASEURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"upload"

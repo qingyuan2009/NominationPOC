@@ -68,5 +68,17 @@ public class PeriodController {
         return new ResponseEntity<>(periodDTO, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/{number}" , method = RequestMethod.PUT)
+    public ResponseEntity<HttpStatus> update(@PathVariable String number, @RequestBody Period period) {
+        service.update(number, period);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{number}" , method = RequestMethod.DELETE)
+    public ResponseEntity<HttpStatus> delete(@PathVariable String number) {
+        service.delete(number);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
+
 
 }

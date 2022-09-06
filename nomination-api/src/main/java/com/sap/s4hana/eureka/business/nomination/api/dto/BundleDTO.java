@@ -7,6 +7,10 @@ import java.util.List;
 @Data
 public class BundleDTO {
 
+    List<RoleDTO> roles;
+
+    List<TeamDTO> teams;
+
     List<UserDTO> users;
 
     List<PeriodDTO> periods;

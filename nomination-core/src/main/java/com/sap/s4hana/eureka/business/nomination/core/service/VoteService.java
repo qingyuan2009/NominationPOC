@@ -6,6 +6,7 @@ import com.sap.s4hana.eureka.business.nomination.core.repository.PrizeRepository
 import com.sap.s4hana.eureka.business.nomination.core.repository.UserRepository;
 import com.sap.s4hana.eureka.business.nomination.core.repository.VoteRepository;
 import com.sap.s4hana.eureka.framework.common.converter.ObjectMapper;
+import com.sap.s4hana.eureka.framework.common.exception.BusinessException;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Criteria;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Order;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Path;
@@ -76,6 +77,48 @@ public class VoteService {
             return repository.create(vote);
         }else{
             return _vote.getId();
+        }
+    }
+
+    public void update(String number, Vote vote) {
+        Vote _vote = repository.findByVoteNumber(number);
+        if (_vote == null){
+            throw new BusinessException("Vote: " + number+ " not found!");
+        }else{
+            User _nominee = userRepository.findByUserNumber(vote.getNominee().getUserNumber());
+            if (_nominee == null){
+                throw new BusinessException("Nominee: " + vote.getNominee().getUserNumber() + " not found!");
+            }else{
+                _vote.setNominee(_nominee);
+            }
+            Prize _prize = prizeRepository.findByPrizeNumber(vote.getPrize().getPrizeNumber());
+            if (_prize == null){
+                throw new BusinessException("Prize: " + vote.getPrize().getPrizeNumber() + " not found!");
+            }else{
+                _vote.setPrize(_prize);
+            }
+            Period _period = periodRepository.findByPeriodNumber(vote.getPeriod().getPeriodNumber());
+            if (_period == null){
+                throw new BusinessException("Period: " + vote.getPeriod().getPeriodNumber() + " not found!");
+            }else{
+                _vote.setPeriod(_period);
+            }
+            User _voter = userRepository.findByUserNumber(vote.getVoter().getUserNumber());
+            if (_voter == null){
+                throw new BusinessException("Voter: " + vote.getVoter().getUserNumber() + " not found!");
+            }else{
+                _vote.setVoter(_voter);
+            }
+            repository.update(_vote);
+        }
+    }
+
+    public void delete(String number) {
+        Vote _vote = repository.findByVoteNumber(number);
+        if (_vote == null){
+            throw new BusinessException("Vote: " + number + " not found!");
+        }else{
+            repository.delete(_vote);
         }
     }
 

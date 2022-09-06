@@ -68,5 +68,16 @@ public class UserController {
         return new ResponseEntity<>(userDTO, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/{number}" , method = RequestMethod.PUT)
+    public ResponseEntity<HttpStatus> update(@PathVariable String number, @RequestBody User user) {
+        service.update(number, user);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{number}" , method = RequestMethod.DELETE)
+    public ResponseEntity<HttpStatus> delete(@PathVariable String number) {
+        service.delete(number);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
 
 }

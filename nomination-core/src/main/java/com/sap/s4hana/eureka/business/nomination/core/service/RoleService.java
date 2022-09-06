@@ -55,11 +55,19 @@ public class RoleService {
     public void update(String number, Role role) {
         Role _role = repository.findByRoleNumber(number);
         if (_role == null){
-            throw new BusinessException("Role: " + role.getRoleNumber() + " not found!");
+            throw new BusinessException("Role: " + number + " not found!");
         }else{
-            //_role.setRoleNumber(role.getRoleNumber());
             _role.setRoleName(role.getRoleName());
             repository.update(_role);
+        }
+    }
+
+    public void delete(String number) {
+        Role _role = repository.findByRoleNumber(number);
+        if (_role == null){
+            throw new BusinessException("Role: " + number + " not found!");
+        }else{
+            repository.delete(_role);
         }
     }
 

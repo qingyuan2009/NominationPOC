@@ -7,6 +7,7 @@ import com.sap.s4hana.eureka.business.nomination.core.repository.RoleRepository;
 import com.sap.s4hana.eureka.business.nomination.core.repository.TeamRepository;
 import com.sap.s4hana.eureka.business.nomination.core.repository.UserRepository;
 import com.sap.s4hana.eureka.framework.common.converter.ObjectMapper;
+import com.sap.s4hana.eureka.framework.common.exception.BusinessException;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Criteria;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Order;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Path;
@@ -66,6 +67,40 @@ public class UserService {
             return repository.create(user);
         }else{
             return _user.getId();
+        }
+    }
+
+    public void update(String number, User user) {
+        User _user = repository.findByUserNumber(number);
+        if (_user == null){
+            throw new BusinessException("User: " + number+ " not found!");
+        }else{
+            _user.setFirstName(user.getFirstName());
+            _user.setLastName(user.getLastName());
+            _user.setLoginName(user.getLoginName());
+            _user.setPassword(user.getPassword());
+            Role _role = roleRepository.findByRoleNumber(user.getRole().getRoleNumber());
+            if (_role == null){
+                throw new BusinessException("Role: " + user.getRole().getRoleNumber()+ " not found!");
+            }else{
+                _user.setRole(_role);
+            }
+            Team _team = teamRepository.findByTeamNumber(user.getTeam().getTeamNumber());
+            if (_team == null){
+                throw new BusinessException("Team: " + user.getTeam().getTeamNumber() + " not found!");
+            }else{
+                _user.setTeam(_team);
+            }
+            repository.update(_user);
+        }
+    }
+
+    public void delete(String number) {
+        User _user = repository.findByUserNumber(number);
+        if (_user == null){
+            throw new BusinessException("User: " + number + " not found!");
+        }else{
+            repository.delete(_user);
         }
     }
 

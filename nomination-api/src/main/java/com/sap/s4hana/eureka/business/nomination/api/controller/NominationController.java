@@ -4,6 +4,7 @@ import com.sap.s4hana.eureka.business.nomination.api.dto.NominationDTO;
 import com.sap.s4hana.eureka.business.nomination.api.dto.RoleDTO;
 import com.sap.s4hana.eureka.business.nomination.core.domain.bo.Nomination;
 import com.sap.s4hana.eureka.business.nomination.core.domain.bo.Role;
+import com.sap.s4hana.eureka.business.nomination.core.domain.bo.User;
 import com.sap.s4hana.eureka.business.nomination.core.service.NominationService;
 import com.sap.s4hana.eureka.framework.common.converter.ObjectMapper;
 import org.slf4j.Logger;
@@ -63,6 +64,18 @@ public class NominationController {
         Nomination nomination = service.findByNumber(number);
         NominationDTO nominationDTO = objectMapper.map(nomination, NominationDTO.class);
         return new ResponseEntity<>(nominationDTO, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{number}" , method = RequestMethod.PUT)
+    public ResponseEntity<HttpStatus> update(@PathVariable String number, @RequestBody Nomination nomination) {
+        service.update(number, nomination);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{number}" , method = RequestMethod.DELETE)
+    public ResponseEntity<HttpStatus> delete(@PathVariable String number) {
+        service.delete(number);
+        return new ResponseEntity<>( HttpStatus.OK);
     }
 
 

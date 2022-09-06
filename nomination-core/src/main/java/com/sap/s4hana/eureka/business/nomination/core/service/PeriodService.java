@@ -7,6 +7,7 @@ import com.sap.s4hana.eureka.business.nomination.core.domain.bo.Team;
 import com.sap.s4hana.eureka.business.nomination.core.repository.PeriodRepository;
 import com.sap.s4hana.eureka.business.nomination.core.repository.RoleRepository;
 import com.sap.s4hana.eureka.framework.common.converter.ObjectMapper;
+import com.sap.s4hana.eureka.framework.common.exception.BusinessException;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Criteria;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Order;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Path;
@@ -52,6 +53,29 @@ public class PeriodService {
             return repository.create(period);
         }else{
             return _period.getId();
+        }
+    }
+
+    public void update(String number, Period period) {
+        Period _period = repository.findByPeriodNumber(number);
+        if (_period == null){
+            throw new BusinessException("Period: " + number + " not found!");
+        }else{
+            _period.setPeriodName(period.getPeriodName());
+            _period.setNorminationStart(period.getNorminationStart());
+            _period.setNorminationEnd(period.getNorminationEnd());
+            _period.setVoteStart(period.getVoteStart());
+            _period.setVoteEnd(period.getVoteEnd());
+            repository.update(_period);
+        }
+    }
+
+    public void delete(String number) {
+        Period _period = repository.findByPeriodNumber(number);
+        if (_period == null){
+            throw new BusinessException("Period: " + number + " not found!");
+        }else{
+            repository.delete(_period);
         }
     }
 

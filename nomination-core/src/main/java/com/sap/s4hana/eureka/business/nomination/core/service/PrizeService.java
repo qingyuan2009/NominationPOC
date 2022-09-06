@@ -1,12 +1,10 @@
 package com.sap.s4hana.eureka.business.nomination.core.service;
 
-import com.sap.s4hana.eureka.business.nomination.core.domain.bo.Period;
-import com.sap.s4hana.eureka.business.nomination.core.domain.bo.Prize;
-import com.sap.s4hana.eureka.business.nomination.core.domain.bo.Role;
-import com.sap.s4hana.eureka.business.nomination.core.domain.bo.Team;
+import com.sap.s4hana.eureka.business.nomination.core.domain.bo.*;
 import com.sap.s4hana.eureka.business.nomination.core.repository.PeriodRepository;
 import com.sap.s4hana.eureka.business.nomination.core.repository.PrizeRepository;
 import com.sap.s4hana.eureka.framework.common.converter.ObjectMapper;
+import com.sap.s4hana.eureka.framework.common.exception.BusinessException;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Criteria;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Order;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Path;
@@ -59,6 +57,32 @@ public class PrizeService {
             return repository.create(prize);
         }else{
             return _prize.getId();
+        }
+    }
+
+    public void update(String number, Prize prize) {
+        Prize _prize = repository.findByPrizeNumber(number);
+        if (_prize == null){
+            throw new BusinessException("Prize: " + number+ " not found!");
+        }else{
+            _prize.setPrizeName(prize.getPrizeName());
+            _prize.setPrizeDescription(prize.getPrizeDescription());
+            Period _peirod = periodRepository.findByPeriodNumber(prize.getPeriod().getPeriodNumber());
+            if (_peirod == null){
+                throw new BusinessException("Period: " + prize.getPeriod().getPeriodNumber()+ " not found!");
+            }else{
+                _prize.setPeriod(_peirod);
+            }
+            repository.update(_prize);
+        }
+    }
+
+    public void delete(String number) {
+        Prize _prize = repository.findByPrizeNumber(number);
+        if (_prize == null){
+            throw new BusinessException("Prize: " + number + " not found!");
+        }else{
+            repository.delete(_prize);
         }
     }
 

@@ -65,6 +65,18 @@ public class PrizeController {
         return new ResponseEntity<>(prizeDTO, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/{number}" , method = RequestMethod.PUT)
+    public ResponseEntity<HttpStatus> update(@PathVariable String number, @RequestBody Prize prize) {
+        service.update(number, prize);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{number}" , method = RequestMethod.DELETE)
+    public ResponseEntity<HttpStatus> delete(@PathVariable String number) {
+        service.delete(number);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
+
 
 
 }

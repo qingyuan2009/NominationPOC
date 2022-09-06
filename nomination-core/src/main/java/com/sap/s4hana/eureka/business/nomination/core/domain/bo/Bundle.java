@@ -7,6 +7,10 @@ import java.util.List;
 @Data
 public class Bundle {
 
+    List<Role> roles;
+
+    List<Team> teams;
+
     List<User> users;
 
     List<Period> periods;

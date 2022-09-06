@@ -73,4 +73,10 @@ public class TeamController {
         service.update(number, team);
         return new ResponseEntity<>( HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/{number}" , method = RequestMethod.DELETE)
+    public ResponseEntity<HttpStatus> delete(@PathVariable String number) {
+        service.delete(number);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
 }

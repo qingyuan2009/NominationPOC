@@ -65,5 +65,17 @@ public class VoteController {
         return new ResponseEntity<>(voteDTO, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/{number}" , method = RequestMethod.PUT)
+    public ResponseEntity<HttpStatus> update(@PathVariable String number, @RequestBody Vote vote) {
+        service.update(number, vote);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{number}" , method = RequestMethod.DELETE)
+    public ResponseEntity<HttpStatus> delete(@PathVariable String number) {
+        service.delete(number);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
+
 
 }

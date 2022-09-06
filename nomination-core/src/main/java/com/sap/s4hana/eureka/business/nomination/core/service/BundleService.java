@@ -15,7 +15,16 @@ public class BundleService {
     private static final Logger LOGGER = LoggerFactory.getLogger(BundleService.class);
 
     @Autowired
+    RoleService roleService;
+
+    @Autowired
+    TeamService teamService;
+
+    @Autowired
     UserService userService;
+
+    @Autowired
+    PeriodService periodService;
 
     @Autowired
     PrizeService prizeService;
@@ -30,13 +39,25 @@ public class BundleService {
     ObjectMapper objectMapper;
 
     public void create(Bundle bundle) {
+        Iterable<Role> roles = bundle.getRoles();
+        Iterable<Team> teams = bundle.getTeams();
         Iterable<User> users = bundle.getUsers();
+        Iterable<Period> periods = bundle.getPeriods();
         Iterable<Prize> prizes = bundle.getPrizes();
         Iterable<Nomination> nominations = bundle.getNominations();
         Iterable<Vote> votes = bundle.getVotes();
 
+        for (Role role:roles) {
+            roleService.create(role);
+        }
+        for (Team team:teams) {
+            teamService.create(team);
+        }
         for (User user:users) {
             userService.create(user);
+        }
+        for (Period period:periods) {
+            periodService.create(period);
         }
         for (Prize prize:prizes) {
             prizeService.create(prize);

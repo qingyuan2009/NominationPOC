@@ -58,10 +58,19 @@ public class TeamService {
     public void update(String number, Team team) {
         Team _team = repository.findByTeamNumber(number);
         if (_team == null){
-            throw new BusinessException("Team: " + team.getTeamNumber() + " not found!");
+            throw new BusinessException("Team: " + number + " not found!");
         }else{
             _team.setTeamName(team.getTeamName());
             repository.update(_team);
+        }
+    }
+
+    public void delete(String number) {
+        Team _team = repository.findByTeamNumber(number);
+        if (_team == null){
+            throw new BusinessException("Team: " + number + " not found!");
+        }else{
+            repository.delete(_team);
         }
     }
 

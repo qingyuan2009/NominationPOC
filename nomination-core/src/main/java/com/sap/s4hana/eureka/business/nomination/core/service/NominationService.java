@@ -6,6 +6,7 @@ import com.sap.s4hana.eureka.business.nomination.core.repository.PeriodRepositor
 import com.sap.s4hana.eureka.business.nomination.core.repository.PrizeRepository;
 import com.sap.s4hana.eureka.business.nomination.core.repository.UserRepository;
 import com.sap.s4hana.eureka.framework.common.converter.ObjectMapper;
+import com.sap.s4hana.eureka.framework.common.exception.BusinessException;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Criteria;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Order;
 import com.sap.s4hana.eureka.framework.rds.object.common.bo.query.Path;
@@ -77,6 +78,49 @@ public class NominationService {
             return repository.create(nomination);
         }else{
             return _nomination.getId();
+        }
+    }
+
+    public void update(String number, Nomination nomination) {
+        Nomination _nomination = repository.findByNominationNumber(number);
+        if (_nomination == null){
+            throw new BusinessException("Nomination: " + number+ " not found!");
+        }else{
+            _nomination.setComment(nomination.getComment());
+            User _nominee = userRepository.findByUserNumber(nomination.getNominee().getUserNumber());
+            if (_nominee == null){
+                throw new BusinessException("Nominee: " + nomination.getNominee().getUserNumber() + " not found!");
+            }else{
+                _nomination.setNominee(_nominee);
+            }
+            Prize _prize = prizeRepository.findByPrizeNumber(nomination.getPrize().getPrizeNumber());
+            if (_prize == null){
+                throw new BusinessException("Prize: " + nomination.getPrize().getPrizeNumber() + " not found!");
+            }else{
+                _nomination.setPrize(_prize);
+            }
+            Period _period = periodRepository.findByPeriodNumber(nomination.getPeriod().getPeriodNumber());
+            if (_period == null){
+                throw new BusinessException("Period: " + nomination.getPeriod().getPeriodNumber() + " not found!");
+            }else{
+                _nomination.setPeriod(_period);
+            }
+            User _nominator = userRepository.findByUserNumber(nomination.getNominator().getUserNumber());
+            if (_nominator == null){
+                throw new BusinessException("Nominator: " + nomination.getNominator().getUserNumber() + " not found!");
+            }else{
+                _nomination.setNominator(_nominator);
+            }
+            repository.update(_nomination);
+        }
+    }
+
+    public void delete(String number) {
+        Nomination _nomination = repository.findByNominationNumber(number);
+        if (_nomination == null){
+            throw new BusinessException("Nomination: " + number + " not found!");
+        }else{
+            repository.delete(_nomination);
         }
     }
 

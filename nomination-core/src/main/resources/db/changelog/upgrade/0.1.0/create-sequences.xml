@@ -10,6 +10,6 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <changeSet author="i035299 (generated)" id="1">
-        <createSequence sequenceName="seq_gen_sequence" incrementBy="10" startValue="10" />
+        <createSequence sequenceName="seq_gen_sequence" incrementBy="50" startValue="50" />
     </changeSet>
 </databaseChangeLog>
